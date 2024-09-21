@@ -5,7 +5,7 @@ CREATE TABLE mascotas(
 idmascota	INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nombre		VARCHAR(30) NOT NULL,
 tipo		VARCHAR(20) NOT NULL,
-genero		VARCHAR(20) NOT NULL,
+genero		VARCHAR(20) NOT NULL, 
 peso		DECIMAL(7,2) NOT NULL,
 fechanacimiento	DATE NOT NULL,
 estavivo		CHAR(2) NOT NULL DEFAULT 'si',
