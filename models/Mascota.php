@@ -78,6 +78,23 @@ class Mascota extends Conexion {
     }
   }
 
+  public function delete($params = []):bool {
+
+    try {
+
+      
+    $status = false;
+    $query = "DELETE FROM mascotas WHERE idmascota = ? ";
+    $cmd = $this->pdo->prepare($query);
+    $status = $cmd->execute([$params['idmascota']]);
+    return  $status;
+
+    } catch (Exception $e) {
+      die($e->getMessage());
+    }
+
+  } 
+
 
   public function searchID($params = []):array {
     try {
