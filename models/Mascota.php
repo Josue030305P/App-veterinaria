@@ -10,12 +10,11 @@ class Mascota extends Conexion {
 
   public function getAll() : array {
     try {
-      $query = "SELECT * FROM mascotas ORDER BY idmascota DESC";
+      $query = "SELECT * FROM mascotas WHERE estavivo = 'si'  ORDER BY idmascota DESC";
       $cmd = $this->pdo->prepare($query);
       $cmd->execute();
 
       return $cmd->fetchAll(PDO::FETCH_ASSOC);
-
     } catch (Exception $e) {
       die($e->getMessage());
     }
